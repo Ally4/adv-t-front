@@ -30,12 +30,12 @@ export const registrationAction = (data) => async (dispatch) => {
     // window.alert(res.data.message);
   } catch (error) {
     if (error) {
-      // const errorMessage = error.response.data.message;
-      // console.log(`this is the data ${data.message}`);
+      const errorMessage = error.response.data.message;
+      console.log(`this is the data ${errorMessage}`);
       // dispatch(registrationFail(errorMessage));
       dispatch(registrationFail(error));
-      window.alert(error);
-      // window.alert(errorMessage);
+      // window.alert(error);
+      window.alert(errorMessage);
     } else {
       dispatch(registrationFail("Error in the Network"));
     }
