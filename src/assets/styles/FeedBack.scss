@@ -1,0 +1,69 @@
+ .feedback{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgba(26, 186, 197, 0.04);
+  h1{
+    font-family: "Oswald";
+    font-style: normal;
+    color: rgb(14, 13, 13);
+    font-weight: bold;
+    font-size: 5rem;
+    line-height: 2;
+    letter-spacing: 0.3rem;
+  }
+}
+
+.feedback__inputs {
+  input[type=email],input[type=text] {
+      width: 80%;
+      font-size: 1.5rem;
+      margin: 2rem 8rem auto ;
+      display: inline-block;
+      border: none;
+      background: #FFFFFF;
+      box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+      border-radius: .6rem;
+      padding: 1.2rem;
+      outline: none;
+  }
+  textarea {
+      width: 80%;
+      outline: none;
+      font-size: 1.5rem;
+      margin: 2rem 8rem auto ;
+      display: inline-block;
+      background: #FFFFFF;
+      box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+      border-radius: .6rem;
+      border: 0px;
+      padding: 1.2rem;
+  }
+  button {
+      width: 80%;
+      font-size: 1.5rem;
+      margin: 2rem 8rem auto ;
+      display: inline-block;
+      border-radius: 0.6rem;
+      outline: none;
+      border: none;
+      color: #fff;
+      background-color: #0c8f97;
+      padding: 1.2rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .feedback{
+    h1{
+      font-size: 2.5rem;
+    }
+  }
+  .feedback__inputs{
+    input[type=email],input[type=text],textarea,button{
+    margin: 2rem 3rem auto ;
+    }
+  }
+
+}
