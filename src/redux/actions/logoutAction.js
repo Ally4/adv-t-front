@@ -15,7 +15,7 @@ export const logout = (history) => async (dispatch) => {
             }
         )
         localStorage.removeItem('token')
-        history.push("/login")
+        history.push("/")
         dispatch(logoutSuccess(res))
 
     } catch (error) {
