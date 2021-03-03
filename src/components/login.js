@@ -71,9 +71,7 @@ class LoginForm extends Component {
 
             <span style={{ display: this.props.loginState.loading }}>
               <Progress multi>
-                <Progress animated bar color="primary" value="33" />
-                <Progress animated bar color="success" value="34" />
-                <Progress animated bar color="warning" value="33" />
+                <Progress animated bar color="success" value="100" />
               </Progress>
             </span>
             

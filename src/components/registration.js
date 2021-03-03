@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Badge } from "react-bootstrap/";
+import { Link, NavLink } from 'react-router-dom';
 import { registrationAction } from "../redux/actions/registrationAction";
 
 class Registration extends Component {
@@ -45,16 +46,16 @@ class Registration extends Component {
       genderErrorStatus: false,
     };
 
-    if (this.state.firstname.length <= 3) {
+    if (this.state.firstname.length <= 1) {
       isError = true;
       errors.firstnameErrorStatus = true;
-      errors.firstnameError = "over 3 characters required";
+      errors.firstnameError = "over 1 characters required";
     }
 
-    if (this.state.lastname.length <= 3) {
+    if (this.state.lastname.length <= 1) {
       isError = true;
       errors.lastnameErrorStatus = true;
-      errors.lastnameError = "over 3 characters required";
+      errors.lastnameError = "over 1 characters required";
     }
 
     if (this.state.email.indexOf("@") === -1) {
@@ -63,16 +64,16 @@ class Registration extends Component {
         errors.emailError = "Provide a valid email";
       }
 
-      if (this.state.dateofbirth.length <= 3) {
+      if (this.state.dateofbirth.length <= 1) {
         isError = true;
         errors.dateofbirthErrorStatus = true;
-        errors.dateofbirthError = "over 3 characters required";
+        errors.dateofbirthError = "over 1 characters required";
       }
 
-    if (this.state.gender.length <= 3) {
+    if (this.state.gender.length <= 1) {
       isError = true;
       errors.genderErrorStatus = true;
-      errors.genderError = "over 3 characters required";
+      errors.genderError = "over 1 characters required";
     }
 
     this.setState({
@@ -188,6 +189,9 @@ class Registration extends Component {
               </div>
               </div>
               <input type="submit" value="SIGN UP" aria-label="signup" />
+              <div>
+                <Link to="/login">Login</Link>
+              </div>
             </form>
           </div>
         </div>
