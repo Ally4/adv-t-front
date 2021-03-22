@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans";
+}
+.registration_background {
+    background-image: url(../images/pexels-la-mm-1582782.jpg);
+    background-size: cover;
+    background-repeat: none;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.registration {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 70%;
+    padding-left: 40%;
+}
+
+.form {
+color: white;
+background-color: rgba(170, 209, 170, 0.521);
+display: flex;
+justify-content: center;
+border-radius: 10px;
+box-shadow: 13px 14px 15px rgb(163, 161, 161);
+padding-top: 10px;
+}
+
+
+.register_button {
+    background: rgb(0, 128, 0);
+    border-radius: .6rem;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    border: none;
+    }
+
+.login_link {
+    font-size: 2rem;
+    padding: .5rem 1rem;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    border: none;
+    }
+
+.input_register {
+    height: 50px;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}

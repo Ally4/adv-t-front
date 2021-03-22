@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Logout from './Logout'
+import Navigation from './navigation'
 
 export default class dashboard extends Component {
   render() {
@@ -8,7 +8,7 @@ export default class dashboard extends Component {
     if (token) {
       return (
         <div>
-        <Logout />
+        <Navigation />
           <h1>WELCOME TO ADVERTISE</h1>
         </div>
       );

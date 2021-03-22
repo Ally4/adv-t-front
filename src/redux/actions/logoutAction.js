@@ -7,19 +7,19 @@ export const logout = (history) => async (dispatch) => {
         const token = localStorage.getItem('token')
 
         const res = await axios.get(
-            'https://adv-t.herokuapp.com/api/v1/auth/logout',
+            'http://localhost:1234/api/v1/auth/logout',
             {
                 headers: {
-                    'Authorization': token
+                    'authorization': token
                 }
             }
         )
         localStorage.removeItem('token')
         history.push("/")
+        console.log('=============================')
         dispatch(logoutSuccess(res))
 
     } catch (error) {
-        console.log(error)
         dispatch(logoutError(error))
     }
 }; 

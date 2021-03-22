@@ -1,9 +1,12 @@
 import { REGISTER, REGISTER_SUCCESS, REGISTER_FAIL} from "../types/registrationTypes";
 
+
+
 const initialState = {
-    loading: 'none',
+    loading: false,
     data: [],
-    error: ''
+    error: '',
+    message:''
 };
 
 const registration = (state = initialState, action) => {
@@ -11,17 +14,16 @@ const registration = (state = initialState, action) => {
     case REGISTER:
       return {
         ...state,
-        loading: 'block'
+        loading: true
       };
     case REGISTER_SUCCESS:
       return {
-        loading: 'none',
         data: action.payload,
-        error: ''
+        error: '',
+        message: action.payload.message,
       };
     case REGISTER_FAIL:
       return {
-        loading: 'none',
         data: [],
         error: action.payload
       };

@@ -35,7 +35,7 @@ class LoginForm extends Component {
       errors.emailErrorStatus = true;
       errors.emailError = 'Provide a valid email';
     }
-    if (this.state.password.length == 0) {
+    if (this.state.password.length === 0) {
       isError = true;
       errors.passwordErrorStatus = true;
       errors.passwordError = 'Provide a password';
@@ -90,7 +90,6 @@ class LoginForm extends Component {
             <span style={{ color: "red" }}>{this.props.loginState.error}</span>
 
             <div className="d-flex flex-column mb-4">
-              <label id="email" htmlFor="" >Email</label>
               <span style={{ color: "red" }}>{this.state.emailError}</span>
               <input
                 id="aria-1"
@@ -104,7 +103,6 @@ class LoginForm extends Component {
             </div>
 
             <div className="d-flex flex-column mb-4">
-              <label id="password" htmlFor="" >Password</label>
               <span style={{ color: "red" }}>{this.state.passwordError}</span>
               <input
                 id="aria-2"
@@ -115,15 +113,13 @@ class LoginForm extends Component {
                 onChange={(e) => this.change(e)}
                 className="inputLogin"
               />
-              <Link to='/reset-password' className="resetPassword mb4">
-                Forgot Password
-            </Link>
             </div>
-
             <button className="loginButton" type="submit" value="LOGIN" aria-label="login" >
               Login
             </button>
-
+            <Link to='/reset-password' className="resetPassword mb4">
+                Forgot Password
+            </Link>
           </form>
         </div>
       </div>

@@ -15,12 +15,14 @@ const reducer = (state = initialState, action) => {
             };
         case LOGIN_SUCCESS:
             return {
+                ...state,
                 loading: 'none',
                 data: action.payload,
                 error: ''
             };
         case LOGIN_FAIL:
             return {
+                ...state,
                 loading: 'none',
                 data: [],
                 error: action.payload

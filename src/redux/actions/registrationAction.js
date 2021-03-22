@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   REGISTER,
   REGISTER_SUCCESS,
@@ -6,16 +5,17 @@ import {
 } from "../types/registrationTypes";
 import axios from "axios";
 
+
 export const registrationAction = (data) => async (dispatch) => {
   try {
     dispatch(registration());
     const token = localStorage.getItem("token");
     const instance = axios.create({
-      headers: { "x-access-token": token },
+      headers: { "authorization": token },
     });
 
     const res = await instance.post(
-      "https://adv-t.herokuapp.com/api/v1/auth/register",
+      "http://localhost:1234/api/v1/auth/register",
       data
     );
     
@@ -26,6 +26,7 @@ export const registrationAction = (data) => async (dispatch) => {
     //   data
     // );
     dispatch(registrationSuccess(res));
+
     // window.alert(res.data.message);
     // window.alert(res.data.message);
   } catch (error) {
@@ -33,9 +34,9 @@ export const registrationAction = (data) => async (dispatch) => {
       const errorMessage = error.response.data.message;
       console.log(`this is the data ${errorMessage}`);
       // dispatch(registrationFail(errorMessage));
-      dispatch(registrationFail(error));
+      dispatch(registrationFail(error.response.data.message));
       // window.alert(error);
-      window.alert(errorMessage);
+      // window.alert(errorMessage);
     } else {
       dispatch(registrationFail("Error in the Network"));
     }
@@ -52,6 +53,7 @@ export const registrationSuccess = (data) => {
   return {
     type: REGISTER_SUCCESS,
     payload: data,
+    message: data.message
   };
 };
 

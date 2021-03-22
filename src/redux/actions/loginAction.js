@@ -5,8 +5,9 @@ export const loginAction = (data, history) => async (dispatch) => {
     try {
         dispatch(loginRequest())
 
-        const res = await axios.post('https://adv-t.herokuapp.com/api/v1/auth/login', data)
+        const res = await axios.post('http://localhost:1234/api/v1/auth/login', data)
         const user = await res.data;
+        
         localStorage.setItem('token', user.Token)
         // localStorage.setItem('user-data', JSON.stringify(user.user));
 
